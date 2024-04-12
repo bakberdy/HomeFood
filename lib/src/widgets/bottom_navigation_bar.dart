@@ -19,28 +19,22 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
     const BasketPage(),
     const ProfilePage()
   ];
-  //
-  // void _onItemTapped(int index) {
-  //
-  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[_selectedIndex],
-      bottomNavigationBar: Container(
-        height: 80,
-       decoration: BoxDecoration(
-         color: Colors.white,
-         borderRadius: BorderRadius.only(topLeft:Radius.circular(15),topRight:Radius.circular(15),),
-       ),
-
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
         child: BottomNavigationBar(
-          backgroundColor: Colors.transparent,
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Главная'),
-            BottomNavigationBarItem(icon: Icon(Icons.kitchen_outlined), label: 'Повары'),
-            BottomNavigationBarItem(icon: Icon(Icons.shopping_basket_outlined), label: 'Корзина'),
-            BottomNavigationBarItem(icon: Icon(Icons.person_2_outlined), label: 'Профиль'),
+            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.kitchen_outlined), label: 'Chief'),
+            BottomNavigationBarItem(icon: Icon(Icons.shopping_basket_outlined), label: 'Basket'),
+            BottomNavigationBarItem(icon: Icon(Icons.person_2_outlined), label: 'Profile'),
           ],
           currentIndex: _selectedIndex,
           unselectedItemColor: Colors.grey,
@@ -54,4 +48,5 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         ),
       ),
     );
-  }}
+  }
+}
